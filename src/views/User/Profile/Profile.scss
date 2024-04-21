@@ -1,0 +1,23 @@
+.containPage {
+    padding: 20px 30px 10px 30px;
+  }
+  
+  .contentPage {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #eae2e24a;
+  }
+  
+  .btn-edit {
+    background-color: #343a40;
+    color: #fff;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  .bgProfile {
+    background-image: url(https://img6.thuthuatphanmem.vn/uploads/2022/04/19/background-2d-dep-cho-photoshop_023229230.jpg);
+    height: 300px;
+    background-size: cover;
+  }

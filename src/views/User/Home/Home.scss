@@ -1,0 +1,63 @@
+.containPage {
+    padding: 20px 30px;
+    height: 70vh;
+  
+    .titleWeb {
+      color: #07f4c4;
+      font-weight: bold;
+    }
+  
+    height: auto;
+  }
+  
+  .contentPage {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #eae2e24a;
+  }
+  
+  .titleIntro {
+    font-weight: bold;
+  }
+  
+  .btnReadMore {
+    background-image: linear-gradient(
+      to right,
+      #07f4c4 0%,
+      #1ed956 51%,
+      #798207 100%
+    );
+    margin: 30px auto;
+    padding: 15px 35px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+  
+  .btnReadMore:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .card {
+    background-color: #ffffff00;
+    border: none;
+    padding: 20px 0px;
+  
+    .imageCup {
+      margin-left: 32px;
+      img {
+        max-width: 520px;
+        z-index: 3;
+        position: relative;
+        border-radius: 40px;
+      }
+    }
+  }
