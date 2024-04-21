@@ -7,31 +7,23 @@
 
     <div class="menu-toggle-wrap">
       <button class="menu-toggle" @click="ToggleMenu">
-        <span class="material-icons"
-          ><i class="fa-solid fa-angles-right fa-xs"></i
-        ></span>
+        <span class="material-icons"><i class="fa-solid fa-angles-right fa-xs"></i></span>
       </button>
     </div>
 
     <h3>Menu</h3>
     <div class="menu">
       <router-link to="/" class="button">
-        <span class="material-icons"
-          ><i class="fa-solid fa-house icon"></i
-        ></span>
+        <span class="material-icons"><i class="fa-solid fa-house icon"></i></span>
         <span class="text">Home</span>
       </router-link>
       <router-link to="/about" class="button">
-        <span class="material-icons"
-          ><i class="fa-solid fa-bell-concierge"></i
-        ></span>
-        <span class="text">Menu</span>
+        <span class="material-icons"><i class="fa-solid fa-book"></i></span>
+        <span class="text">Books</span>
       </router-link>
       <router-link to="/order" class="button">
-        <span class="material-icons"
-          ><i class="fa-solid fa-bookmark icon"></i
-        ></span>
-        <span class="text">Oders</span>
+        <span class="material-icons"><i class="fa-solid fa-receipt"></i></span>
+        <span class="text">Borrow</span>
       </router-link>
       <router-link v-if="isLogin" to="/profile" class="button">
         <span class="material-icons"><i class="fa-solid fa-user"></i></span>
@@ -45,20 +37,11 @@
     <div class="flex"></div>
     <div class="menu" @click="showModal">
       <div class="button">
-        <span class="material-icons"
-          ><i class="fa-solid fa-right-from-bracket"></i
-        ></span>
+        <span class="material-icons"><i class="fa-solid fa-right-from-bracket"></i></span>
         <span class="text">Logout</span>
       </div>
-      <a-modal
-        title="Đăng xuất"
-        :open="isModal"
-        @ok="handleOk"
-        @cancel="handleCancel"
-        :ok-button-props="okButtonProps"
-        okText="Đăng xuất"
-        cancelText="Hủy"
-      >
+      <a-modal title="Đăng xuất" :open="isModal" @ok="handleOk" @cancel="handleCancel" :ok-button-props="okButtonProps"
+        okText="Đăng xuất" cancelText="Hủy">
         <p>Bạn có chắc muốn đăng xuất khỏi hệ thống?</p>
       </a-modal>
     </div>
@@ -66,10 +49,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import logoURL from "../../assets/logoBook.png";
 import { Button } from "ant-design-vue";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
+import logoURL from "../../assets/logoBook.png";
 
 const router = useRouter();
 

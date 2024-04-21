@@ -12,40 +12,16 @@
                       <div class="d-flex align-items-center mb-2">
                         <div class="titleWeb">Sign In</div>
                       </div>
-                      <!-- <div class="fw-normal desLogin">
-                        Log in as a store employee
-                      </div> -->
+
                       <div class="group">
-                        <label for="phone"
-                          ><i class="fa-solid fa-phone iconForm"></i
-                        ></label>
-                        <input
-                          type="text"
-                          id="phone"
-                          class="groupInput"
-                          v-model="phone"
-                          name="phone"
-                          autocomplete="off"
-                          placeholder="Nhập số diện thoại"
-                          required
-                          maxlength="10"
-                          minlength="9"
-                        />
+                        <label for="phone"><i class="fa-solid fa-phone iconForm"></i></label>
+                        <input type="text" id="phone" class="groupInput" v-model="phone" name="phone" autocomplete="off"
+                          placeholder="Nhập số diện thoại" required maxlength="10" minlength="9" />
                       </div>
                       <div class="group2">
-                        <label for="password"
-                          ><i class="fa-solid fa-lock iconForm"></i
-                        ></label>
-                        <input
-                          :type="showPassword ? 'text' : 'password'"
-                          v-model="password"
-                          name="password"
-                          id="password"
-                          class="groupInput"
-                          autocomplete="off"
-                          placeholder="Nhập mật khẩu"
-                          required
-                        />
+                        <label for="password"><i class="fa-solid fa-lock iconForm"></i></label>
+                        <input :type="showPassword ? 'text' : 'password'" v-model="password" name="password"
+                          id="password" class="groupInput" autocomplete="off" placeholder="Nhập mật khẩu" required />
                         <div @click="toggleShowPassword" class="iconPassword">
                           <div v-if="showPassword">
                             <i class="fa-solid fa-eye"></i>
@@ -55,9 +31,7 @@
                           </div>
                         </div>
                       </div>
-                      <a class="small text-muted text-center d-block" href="#!"
-                        >Forgot Your Password?</a
-                      >
+                      <a class="small text-muted text-center d-block" href="#!">Forgot Your Password?</a>
                       <div class="pt-1 mb-4">
                         <button class="btnPay">SIGN IN</button>
                       </div>
@@ -66,7 +40,8 @@
                 </div>
                 <div class="col-md-6 col-lg-6">
                   <div class="wrapper">
-                    <div class="title">Hello, Friend!</div>
+                    <div class="title pl-2">Are you administrator?
+                    </div>
                     <p>
                       Register with your personal details to use all of site
                       features.
@@ -74,8 +49,10 @@
                     <router-link to="/register" class="button btn-register">
                       <span>SIGN UP</span>
                     </router-link>
+
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -86,56 +63,56 @@
 </template>
 
 <script setup>
-  import axios from "axios";
-  import { ref } from "vue";
-  import { toast } from "vue3-toastify";
-  import { useRouter } from "vue-router";
+import axios from "axios";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { toast } from "vue3-toastify";
 
-  const router = useRouter();
+const router = useRouter();
 
-  const phone = ref("");
-  const password = ref("");
-  const showPassword = ref(false);
+const phone = ref("");
+const password = ref("");
+const showPassword = ref(false);
 
-  const toggleShowPassword = () => {
-    showPassword.value = !showPassword.value;
+const toggleShowPassword = () => {
+  showPassword.value = !showPassword.value;
+};
+const isLoggedIn = () => {
+  if (localStorage.getItem("isLoginDG") === "true") {
+    router.push("/");
+  }
+};
+isLoggedIn();
+
+const login = () => {
+  const formData = {
+    phone: phone.value,
+    password: password.value,
   };
-  const isLoggedIn = () => {
-    if (localStorage.getItem("isLoginDG") === "true") {
-      router.push("/");
-    }
-  };
-  isLoggedIn();
-
-  const login = () => {
-    const formData = {
-      phone: phone.value,
-      password: password.value,
-    };
-    axios
-      .post("http://localhost:3000/authentication/login", formData)
-      .then((res) => {
-        if (res.data.error) {
-          toast.error(res.data.error);
-        } else {
-          const ID_DocGia = res.data.data._id;
-          const Ten = res.data.data.Ten;
-          const Address = res.data.data.DiaChi;
-          const NgaySinh = res.data.data.NgaySinh;
-          const DienThoai = res.data.data.DienThoai;
-          const Avatar = res.data.data.Avatar;
-          const isLogin = true;
-          localStorage.setItem("ID_DG", ID_DocGia);
-          localStorage.setItem("TenDG", Ten);
-          localStorage.setItem("AvatarDG", Avatar);
-          localStorage.setItem("DiaChiDG", Address);
-          localStorage.setItem("NgaySinhDG", NgaySinh);
-          localStorage.setItem("DienThoaiDG", DienThoai);
-          localStorage.setItem("isLoginDG", isLogin);
-          router.push("/");
-        }
-      });
-  };
+  axios
+    .post("http://localhost:3000/authentication/login", formData)
+    .then((res) => {
+      if (res.data.error) {
+        toast.error(res.data.error);
+      } else {
+        const ID_DocGia = res.data.data._id;
+        const Ten = res.data.data.Ten;
+        const Address = res.data.data.DiaChi;
+        const NgaySinh = res.data.data.NgaySinh;
+        const DienThoai = res.data.data.DienThoai;
+        const Avatar = res.data.data.Avatar;
+        const isLogin = true;
+        localStorage.setItem("ID_DG", ID_DocGia);
+        localStorage.setItem("TenDG", Ten);
+        localStorage.setItem("AvatarDG", Avatar);
+        localStorage.setItem("DiaChiDG", Address);
+        localStorage.setItem("NgaySinhDG", NgaySinh);
+        localStorage.setItem("DienThoaiDG", DienThoai);
+        localStorage.setItem("isLoginDG", isLogin);
+        router.push("/");
+      }
+    });
+};
 </script>
 
 <style lang="scss" scoped>

@@ -3,7 +3,7 @@
       <div class="titlePage">
         <h2>
           Welcome to
-          <span class="titleWeb">F<span class="text-dark">BOOKS</span></span>
+          <span class="titleWeb">Library<span class="text-dark">BOOKS</span></span>
         </h2>
       </div>
       <div class="contentPage">

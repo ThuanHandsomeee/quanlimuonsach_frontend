@@ -3,7 +3,7 @@
     <div class="title">
       <div class="logo">
         <img src="../../assets/logoBook.png" alt="Vue" />
-        <span class="titleWeb">BOOKS<span class="text-dark">FUTURE</span></span>
+        <span class="titleWeb">BOOKS<span class="text-light">WORLD</span></span>
       </div>
     </div>
   </nav>
