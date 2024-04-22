@@ -6,8 +6,8 @@
           <div class="col col-xl-10">
             <div class="card loginForm">
               <div class="row g-0" style="min-height: 500px">
-                <div class="col-md-6 col-lg-6 d-flex align-items-center">
-                  <div class="card-body p-4 p-lg-5 text-black">
+                <div class="col-md-6 col-lg-6 d-flex align-items-center leftForm">
+                  <div class="card-body p-4 p-lg-5 text-white">
                     <form @submit.prevent="login">
                       <div class="d-flex align-items-center mb-2">
                         <div class="titleWeb">Sign In</div>
@@ -34,20 +34,21 @@
                       <a class="small text-muted text-center d-block" href="#!">Forgot Your Password?</a>
                       <div class="pt-1 mb-4">
                         <button class="btnPay">SIGN IN</button>
+                        <router-link to="/register" class="button btn-register">
+                          <span>SIGN UP</span>
+                        </router-link>
                       </div>
                     </form>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-6">
                   <div class="wrapper">
-                    <div class="title pl-2">Are you administrator?
-                    </div>
+
                     <p>
-                      Register with your personal details to use all of site
-                      features.
+                      Are you an administrator?
                     </p>
-                    <router-link to="/register" class="button btn-register">
-                      <span>SIGN UP</span>
+                    <router-link to="/admin/login" class="button btn-register">
+                      <span>Admin</span>
                     </router-link>
 
                   </div>

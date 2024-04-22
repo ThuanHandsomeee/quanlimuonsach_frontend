@@ -19,10 +19,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 d-flex align-items-center">
                   <div class="card-body p-4 p-lg-4 text-black">
-                    <form
-                      @submit.prevent="register"
-                      enctype="multipart/form-data"
-                    >
+                    <form @submit.prevent="register" enctype="multipart/form-data">
                       <div class="d-flex align-items-center mb-3">
                         <div class="titleWeb">Create account</div>
                       </div>
@@ -30,60 +27,23 @@
                         Register for a store employee account
                       </div>
                       <div class="group">
-                        <label for="phone"
-                          ><i class="fa-solid fa-phone iconForm"></i
-                        ></label>
-                        <input
-                          type="text"
-                          id="phone"
-                          name="phone"
-                          class="groupInput"
-                          autocomplete="off"
-                          v-model="phone"
-                          placeholder="Nhập số điện thoại"
-                          required
-                        />
+                        <label for="phone"><i class="fa-solid fa-phone iconForm"></i></label>
+                        <input type="text" id="phone" name="phone" class="groupInput" autocomplete="off" v-model="phone"
+                          placeholder="Nhập số điện thoại" required />
                       </div>
                       <div class="group">
-                        <label for="username"
-                          ><i class="fa-solid fa-user iconForm"></i
-                        ></label>
-                        <input
-                          type="text"
-                          id="username"
-                          name="username"
-                          v-model="username"
-                          class="groupInput"
-                          autocomplete="off"
-                          placeholder="Nhập họ tên"
-                          required
-                        />
+                        <label for="username"><i class="fa-solid fa-user iconForm"></i></label>
+                        <input type="text" id="username" name="username" v-model="username" class="groupInput"
+                          autocomplete="off" placeholder="Nhập họ tên" required />
                       </div>
                       <div class="group">
-                        <label for="birth"
-                          ><i class="fa-solid fa-user iconForm"></i
-                        ></label>
-                        <input
-                          type="date"
-                          id="birth"
-                          name="birth"
-                          v-model="birth"
-                          class="groupInput"
-                          autocomplete="off"
-                          required
-                        />
+                        <label for="birth"><i class="fa-solid fa-calendar-alt iconForm color-white"></i></label>
+                        <input type="date" id="birth" name="birth" v-model="birth" class="groupInput" autocomplete="off"
+                          required />
                       </div>
                       <div class="group">
-                        <label for="sex"
-                          ><i class="fa-solid fa-user-tie iconForm"></i
-                        ></label>
-                        <select
-                          class="selectGroup"
-                          v-model="sex"
-                          name="sex"
-                          id="sex"
-                          required
-                        >
+                        <label for="sex"><i class="fa-solid fa-user-tie iconForm"></i></label>
+                        <select class="selectGroup" v-model="sex" name="sex" id="sex" required>
                           <option value="">Giới tính</option>
                           <option value="Nam">Nam</option>
                           <option value="Nữ">Nữ</option>
@@ -91,34 +51,14 @@
                       </div>
 
                       <div class="group">
-                        <label for="address"
-                          ><i class="fa-solid fa-map iconForm"></i
-                        ></label>
-                        <input
-                          type="text"
-                          id="address"
-                          name="address"
-                          v-model="address"
-                          class="groupInput"
-                          autocomplete="off"
-                          placeholder="Nhập địa chỉ"
-                          required
-                        />
+                        <label for="address"><i class="fa-solid fa-map iconForm"></i></label>
+                        <input type="text" id="address" name="address" v-model="address" class="groupInput"
+                          autocomplete="off" placeholder="Nhập địa chỉ" required />
                       </div>
                       <div class="group2">
-                        <label for="password"
-                          ><i class="fa-solid fa-lock iconForm"></i
-                        ></label>
-                        <input
-                          :type="showPassword ? 'text' : 'password'"
-                          v-model="password"
-                          name="password"
-                          id="password"
-                          class="groupInput"
-                          autocomplete="off"
-                          placeholder="Nhập mật khẩu"
-                          required
-                        />
+                        <label for="password"><i class="fa-solid fa-lock iconForm"></i></label>
+                        <input :type="showPassword ? 'text' : 'password'" v-model="password" name="password"
+                          id="password" class="groupInput" autocomplete="off" placeholder="Nhập mật khẩu" required />
                         <div @click="toggleShowPassword" class="iconPassword">
                           <div v-if="showPassword">
                             <i class="fa-solid fa-eye"></i>
@@ -129,20 +69,10 @@
                         </div>
                       </div>
                       <div class="group">
-                        <label for="avatar"
-                          ><i class="fa-solid fa-image iconForm"></i
-                        ></label>
-                        <input
-                          type="file"
-                          id="avatar"
-                          class="groupInput"
-                          autocomplete="off"
-                          name="avatar"
-                          accept="image/jpeg, image/png, image/jpg"
-                          required
-                          ref="imageInput"
-                          @change="handleFileUpload"
-                        />
+                        <label for="avatar"><i class="fa-solid fa-image iconForm"></i></label>
+                        <input type="file" id="avatar" class="groupInput" autocomplete="off" name="avatar"
+                          accept="image/jpeg, image/png, image/jpg" required ref="imageInput"
+                          @change="handleFileUpload" />
                       </div>
                       <div class="pt-1 mb-4">
                         <button class="btnPay" type="submit">SIGN UP</button>
@@ -162,8 +92,8 @@
 <script setup>
 import axios from "axios";
 import { ref } from "vue";
-import { toast } from "vue3-toastify";
 import { useRouter } from "vue-router";
+import { toast } from "vue3-toastify";
 
 const router = useRouter();
 

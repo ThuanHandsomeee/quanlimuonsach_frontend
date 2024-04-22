@@ -52,7 +52,7 @@
 import { Button } from "ant-design-vue";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import logoURL from "../../assets/logoBook.png";
+import logoURL from "../../assets/logoBook.jpg";
 
 const router = useRouter();
 

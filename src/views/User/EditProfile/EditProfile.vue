@@ -10,9 +10,9 @@
             <div class="col-lg-4">
               <div class="card mb-4">
                 <div class="card-body text-center">
-                  <img v-if="data.Avatar != null" :src="'http://localhost:3000/' + data.Avatar"
-                    alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                    style="width: 150px; z-index: 1" />
+                  <!-- :src="'http://localhost:3000/' + data.Avatar" -->
+                  <img v-if="data.Avatar != null" :src="imageUploadEdit" alt="Generic placeholder image avatar"
+                    class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1" />
                   <h5 class="my-3">{{ data.Ten }}</h5>
                   <p class="text-muted mb-1">Đọc giả</p>
                   <p class="text-muted mb-4">{{ data.NgaySinh }}</p>
@@ -109,7 +109,7 @@ const fetchData = () => {
       birth.value = res.data.NgaySinh;
       phone.value = res.data.DienThoai;
       address.value = res.data.DiaChi;
-      imageUploadEdit.value = `http://localhost:3000/${res.data.avatar}`;
+      imageUploadEdit.value = `http://localhost:3000/${res.data.Avatar}`;
     })
     .catch((err) => console.log(err));
 };
@@ -123,7 +123,7 @@ const handleImageUpdate = (e) => {
 };
 const handleSave = () => {
   const formData = new FormData();
-  formData.append("avatar", image.value);
+  formData.append("avatar", imageUpload.value);
   formData.append("username", name.value);
   formData.append("phone", phone.value);
   formData.append("birth", birth.value);
@@ -134,9 +134,13 @@ const handleSave = () => {
       if (res.data.error) {
         toast.error(res.data.error);
       } else if (res.data.message) {
+        const Avatar = res.data.data.Avatar;
+
         data.value = res.data;
         toast.success(res.data.message);
         console.log(data.value)
+        localStorage.setItem("AvatarDG", Avatar)
+
         fetchData();
       }
     })

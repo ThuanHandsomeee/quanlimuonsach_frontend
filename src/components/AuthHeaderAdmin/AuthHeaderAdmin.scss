@@ -1,24 +1,24 @@
 .navbar {
-    background-color: var(--light);
-    border-left: 2px solid #eec2ab;
+  background-color: var(--purple);
+  border-left: 2px solid #eec2ab;
+}
+
+.title {
+  margin: auto;
+}
+
+.logo {
+  img {
+    // width: 3rem;
+    width: 40px;
+    border-radius: 50%;
   }
-  
-  .title {
-    margin: auto;
+
+  .titleWeb {
+    position: absolute;
+    font-size: 28px;
+    color: var(--purple);
+    font-weight: bold;
+    margin-left: 6px;
   }
-  
-  .logo {
-    img {
-      // width: 3rem;
-      width: 40px;
-      border-radius: 50%;
-    }
-  
-    .titleWeb {
-      position: absolute;
-      font-size: 28px;
-      color: var(--purple);
-      font-weight: bold;
-      margin-left: 6px;
-    }
-  }
+}

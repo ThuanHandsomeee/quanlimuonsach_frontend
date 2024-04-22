@@ -8,7 +8,7 @@
             <div class="cardInfo">
               <div class="leftCard">
                 <div class="iconCard">
-                  <i class="fa-solid fa-cart-shopping"></i>
+                  <i class="fa-solid fa-receipt"></i>
                 </div>
               </div>
               <div class="rightCard">
@@ -38,10 +38,7 @@
             <div class="cardInfo">
               <div class="leftCard">
                 <div class="iconCard" style="background-color: #cbe2ff">
-                  <i
-                    class="fa-solid fa-hourglass-half"
-                    style="color: #007bff"
-                  ></i>
+                  <i class="fa-solid fa-hourglass-half" style="color: #007bff"></i>
                 </div>
               </div>
               <div class="rightCard">
@@ -96,7 +93,7 @@
               <th scope="col">Ngày trả</th>
               <th scope="col">Số quyển</th>
               <th scope="col">Số tiền</th>
-              <th>Trạng thái</th>
+              <th>Xét duyệt</th>
             </tr>
           </thead>
           <tbody>
@@ -123,28 +120,12 @@
           </tbody>
         </table>
       </div>
-      <a-modal
-        style="top: 40px"
-        v-model:open="isModalAccess"
-        title="Xác nhận duyệt đơn mượn"
-        @ok="handleOkAccess()"
-        :ok-button-props="okButtonAccess"
-        @cancel="handleCancelAccess"
-        cancelText="Đóng"
-        okText="Xác nhận"
-      >
+      <a-modal style="top: 40px" v-model:open="isModalAccess" title="Xác nhận duyệt đơn mượn" @ok="handleOkAccess()"
+        :ok-button-props="okButtonAccess" @cancel="handleCancelAccess" cancelText="Đóng" okText="Xác nhận">
         <p>Bạn có chắc muốn duyệt đơn mượn số: {{ indexSelected + 1 }}</p>
       </a-modal>
-      <a-modal
-        style="top: 40px"
-        v-model:open="isModalDeny"
-        title="Xác nhận hủy đơn mượn"
-        @ok="handleOkDeny()"
-        :ok-button-props="okButtonDeny"
-        @cancel="handleCancelDeny"
-        cancelText="Đóng"
-        okText="Xác nhận"
-      >
+      <a-modal style="top: 40px" v-model:open="isModalDeny" title="Xác nhận hủy đơn mượn" @ok="handleOkDeny()"
+        :ok-button-props="okButtonDeny" @cancel="handleCancelDeny" cancelText="Đóng" okText="Xác nhận">
         <p>Bạn có chắc muốn hủy đơn mượn số: {{ indexSelected + 1 }}</p>
       </a-modal>
     </div>
@@ -155,10 +136,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import axios from "axios";
-import { toast } from "vue3-toastify";
 import moment from "moment";
+import { ref } from "vue";
+import { toast } from "vue3-toastify";
 
 const listRents = ref([]);
 const totalCustomer = ref("");

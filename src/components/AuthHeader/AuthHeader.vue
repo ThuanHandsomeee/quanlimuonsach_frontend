@@ -2,7 +2,7 @@
   <nav class="navbar bg-body-tertiary">
     <div class="title">
       <div class="logo">
-        <img src="../../assets/logoBook.png" alt="Vue" />
+        <img src="../../assets/logoBook.jpg" alt="Vue" />
         <span class="titleWeb">BOOKS<span class="text-light">WORLD</span></span>
       </div>
     </div>

@@ -1,182 +1,319 @@
 .containPage {
-    padding: 20px 30px;
-  }
-  
-  .contentPage {
-    padding: 16px;
+  padding: 20px 30px;
+}
+
+.contentPage {
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #eae2e24a;
+  min-height: calc(100vh - 136px);
+
+  .item {
+    position: relative;
+    background-color: #fff;
     border-radius: 10px;
-    background-color: #eae2e24a;
-    min-height: calc(100vh - 136px);
-    .item {
-      position: relative;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px #a5a1a1b3;
-      min-height: 200px;
+    box-shadow: 0px 0px 10px #a5a1a1b3;
+    min-height: 200px;
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    padding: 12px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .leftItem {
+      margin-right: 12px;
+
+      .imageItem {
+        width: 100px;
+        height: 140px;
+
+        border-radius: 4px;
+      }
+    }
+
+    .rightItem {
       width: 100%;
-      margin: 10px;
-      display: flex;
-      padding: 12px;
-      margin-left: auto;
-      margin-right: auto;
-      .leftItem {
-        margin-right: 12px;
-        .imageItem {
-          width: 100px;
-          height: 140px;
-  
-          border-radius: 4px;
-        }
-      }
-  
-      .rightItem {
+
+      .dataItem {
         width: 100%;
-        .dataItem {
-          width: 100%;
-          .title {
-            margin-right: 4px;
-            font-weight: 500;
-            color: #737f8b;
-          }
-          .content {
-            font-weight: 500;
-          }
+
+        .title {
+          margin-right: 4px;
+          font-weight: 500;
+          color: #737f8b;
         }
-      }
-      .actionItem {
-        position: absolute;
-        right: 2%;
-        bottom: 4%;
-        .btnAddToCart {
-          background: #ba9d35;
-          padding: 5px 15px;
-          border-radius: 20px;
-          margin-bottom: 5px;
-          width: 100%;
-          color: var(--light);
-          transition: 0.5s;
-          transition: all 1 ease-in-out;
-          &:hover {
-            opacity: 0.8;
-          }
+
+        .content {
+          font-weight: 500;
         }
       }
     }
-  
-    @media (max-width: 920px) {
-      .item {
-        margin: 10px auto;
-      }
-    }
-  
-    .pagination {
-      justify-content: center;
-      align-items: center;
-      margin: 20px;
-      display: flex;
-  
-      .page-link:hover {
-        background-color: var(--purple);
+
+    .actionItem {
+      position: absolute;
+      right: 2%;
+      bottom: 4%;
+
+      .btnAddToCart {
+        background: #ba9d35;
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-bottom: 5px;
+        width: 100%;
         color: var(--light);
-      }
-  
-      .page-link:focus {
-        background-color: var(--purple);
-        color: var(--light);
+        transition: 0.5s;
+        transition: all 1 ease-in-out;
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
-  
-  .leftModal {
-    .imageLeftModal {
-      max-width: 200px;
-      margin: auto;
-      display: flex;
-      min-height: 300px;
+
+  @media (max-width: 920px) {
+    .item {
+      margin: 10px auto;
     }
   }
-  
-  .rightModal {
-    .groupForm {
-      display: grid;
-      grid-template-columns: 94px auto;
-      padding: 5px 10px;
-      border-radius: 10px;
-      background-color: #d2de9c;
-      color: #141a46;
-      margin: 10px;
-  
-      select {
-        border: none;
-        background-color: transparent;
-        font-weight: 600;
-      }
-      span {
-        margin: 5px 0px;
-      }
-  
-      .inputGroup {
-        border: none;
-        outline: none;
-        background-color: transparent;
-        padding: 0px 5px;
-        font-weight: 600;
-      }
-  
-      .inputGroup::placeholder {
-        color: #59257a;
-  
-        font-weight: 600;
-      }
+
+  .pagination {
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    display: flex;
+
+    .page-link:hover {
+      background-color: var(--purple);
+      color: var(--light);
     }
-  
-    .totalPrice {
-      margin-top: 20px;
-      display: flex;
-      margin-left: 15px;
-      font-size: 1rem;
-      font-weight: bold;
-      span {
-        color: red;
-        margin-left: 4px;
-      }
-    }
-  
-    .errorText {
-      margin: 0;
-      color: rgb(213, 14, 14);
-      padding: 0px 10px;
+
+    .page-link:focus {
+      background-color: var(--purple);
+      color: var(--light);
     }
   }
-  
-  .groupSearch {
-    background-color: #cdc3c373;
-    border-radius: 20px;
-    width: 283px;
-    margin-bottom: 18px;
-  
-    .inputSearch {
-      padding: 7px 13px;
+}
+
+.leftModal {
+  .imageLeftModal {
+    max-width: 200px;
+    margin: auto;
+    display: flex;
+    min-height: 300px;
+  }
+}
+
+.rightModal {
+  .groupForm {
+    display: grid;
+    grid-template-columns: 94px auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #d2de9c;
+    color: #141a46;
+    margin: 10px;
+
+    select {
+      border: none;
       background-color: transparent;
+      font-weight: 600;
+    }
+
+    span {
+      margin: 5px 0px;
+    }
+
+    .inputGroup {
       border: none;
       outline: none;
-      border-bottom-left-radius: 20px;
-      border-top-left-radius: 20px;
+      background-color: transparent;
+      padding: 0px 5px;
+      font-weight: 600;
     }
-  
-    .iconSearch {
-      background-color: var(--green);
-      color: var(--light);
-      padding: 10px 23px;
-      border-radius: 20px;
-      &:hover {
-        cursor: pointer;
-      }
+
+    .inputGroup::placeholder {
+      color: #59257a;
+
+      font-weight: 600;
     }
   }
-  
-  .textNotFound {
-    text-align: center;
-    font-size: 18px;
+
+  .totalPrice {
+    margin-top: 20px;
+    display: flex;
+    margin-left: 15px;
+    font-size: 1rem;
     font-weight: bold;
+
+    span {
+      color: red;
+      margin-left: 4px;
+    }
   }
+
+  .errorText {
+    margin: 0;
+    color: rgb(213, 14, 14);
+    padding: 0px 10px;
+  }
+}
+
+.groupSearch {
+  background-color: #cdc3c373;
+  border-radius: 20px;
+  width: 283px;
+  margin-bottom: 18px;
+
+  .inputSearch {
+    padding: 7px 13px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+
+  .iconSearch {
+    background-color: var(--blue);
+    color: var(--light);
+    padding: 10px 23px;
+    border-radius: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.textNotFound {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bookDetails {
+  margin-left: 70px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.searchIcon {
+  background-color: #00e5ff;
+  padding: 0.5rem;
+  border: 2px solid #ddd;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.bookList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.bookItem {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookImage {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.bookImage img {
+  width: 200px; // Chiều rộng cố định của ảnh
+  height: 300px; // Chiều cao cố định của ảnh
+  object-fit: cover; // Đảm bảo ảnh phủ đầy khung hình mà không bị méo
+  border-radius: 5px;
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.detailLabel {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.bookActions {
+  margin-top: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.btnRentBook {
+  background-color: #00d9ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.noBooks {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.modalContent {
+  display: flex;
+  align-items: center;
+}
+
+.modalImage {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.modalImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+.modalForm {
+  flex: 2;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.totalPrice {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}

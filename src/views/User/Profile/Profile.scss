@@ -6,6 +6,8 @@
   padding: 10px;
   border-radius: 10px;
   background-color: #eae2e24a;
+  width: 500px;
+  justify-content: center;
 }
 
 .btn-edit {
@@ -21,4 +23,70 @@
   background-image: url(https://as1.ftcdn.net/v2/jpg/05/61/14/00/1000_F_561140028_YDq7Q8eFqn5SLNev4eAw3RYR7ijjaPWs.jpg);
   height: 300px;
   background-size: cover;
+}
+
+.profile-section {
+  height: 100%;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-image: url(https://img.freepik.com/free-photo/education-college-read-information-table_1150-1615.jpg);
+  color: white;
+}
+
+.profile-avatar {
+  width: 150px;
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-avatar img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.edit-profile-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.personal-info {
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.info-label {
+  flex: 0 0 30%;
+  font-weight: bold;
+}
+
+.info-content {
+  flex: 0 0 70%;
+  color: #6c757d;
 }
